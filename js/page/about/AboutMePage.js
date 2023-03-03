@@ -5,6 +5,14 @@ export default class Index extends Component {
     return (
       <View style={styles.container}>
         <Text>最热</Text>
+        <Text>最热</Text>
+        <Text>最热</Text>
+        <Text>最热</Text>
+        <Text>最热</Text>
+        <Text>最热</Text>
+        <Text>最热</Text>
+        <Text>最热</Text>
+        <Text>最热</Text>
       </View>
     );
   }

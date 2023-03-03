@@ -2,6 +2,7 @@ import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import request from '../../utils/request';
 import {ACCOUNT_LOGIN, ACCOUNT_VALIDATEVCODE} from '../../utils/pathMap';
 import {resolveModuleName} from 'typescript';
+import axios from 'axios';
 // import {GLOBAL_LOADING_FLAG} from 'src/constants/commonConstans';
 // export const getLogin = createAsyncThunk(
 //   `/get/login/`,
@@ -9,11 +10,11 @@ export const onRefreshPopular = createAsyncThunk(
   `pages/popular/refreshData`,
   async pageSize => {
     try {
-      const res = await request.get(
+      const res = await axios.get(
         'https://api.github.com/search/repositories?q=java&sort=stars',
       );
       console.log(res);
-      return handleData(res, pageSize);
+      return handleData(res.data, pageSize);
     } catch (err) {
       console.log(err);
     }
